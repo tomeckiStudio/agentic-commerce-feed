@@ -3,14 +3,20 @@
   Export your products to a feed compatible with the Agentic Commerce Protocol by OpenAI. Show your products in ChatGPT's Instant Checkout.
   <br><br>
   <a href="https://x.com/intent/tweet?text=Check%20out%20Agentic%20Commerce%20Feed%20for%20WooCommerce%20%E2%80%94%20export%20products%20to%20the%20Agentic%20Commerce%20Protocol%20by%20OpenAI%20and%20enable%20Instant%20Checkout%20in%20ChatGPT.%20%F0%9F%9A%80&url=https%3A%2F%2Fgithub.com%2FtomeckiStudio%2Fagentic-commerce-feed&hashtags=WooCommerce%2CWordPress%2Cecommerce%2COpenAI%2CChatGPT%2CAgenticCommerceProtocole">
-    <img src="https://tomecki.studio/custom-icons/share-icon-x.png" width="90" height="20">
+    <img src="https://tomecki.studio/custom-icons/share-icon-x.png" width="92" height="20">
   </a>
   <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fgithub.com%2FtomeckiStudio%2Fagentic-commerce-feed%2F">
-    <img src="https://tomecki.studio/custom-icons/share-icon-linkedin.png" width="130" height="20">
+    <img src="https://tomecki.studio/custom-icons/share-icon-linkedin.png" width="137" height="20">
   </a>
 </div>
 <a id="readme-top"></a>
 <br>
+
+> [!CAUTION]
+> WARNING!!! The plugin is currently in the testing phase. It is awaiting validation from OpenAI!
+
+> [!IMPORTANT]
+> As soon as OpenAI clarifies the open points and there’s interest, I’ll dive into full development. **Can’t wait for v2!**
 
 <details>
 <summary><kbd>Table of contents</kbd></summary>
@@ -31,7 +37,7 @@
 - Schedule feed generation using one of three methods: Woo Action Scheduler, WP-Cron or Server-Cron
 - Map product attributes to ACP attributes: You can use WooCommerce values (e.g. for title or description), use product attributes or product metadata (or ACF fields). This makes it easy to use the data you already have in your shop. **And if that's not enough, you can change any attribute using WordPress filters.**
 - The plugin reports every build, making it easy to see which products are causing problems.
-- Many editing options for developers: WordPress filters and actions + globally available classes
+- Options for developers: WordPress filters and actions
 
 <br>
 Available languages:
@@ -47,7 +53,7 @@ Available languages:
 
 ## :computer: Installation
 Standard plugin installation on WordPress:
-1. Download the plugin .zip file, link: 
+1. Download the plugin .zip file, link: [https://github.com/tomeckiStudio/agentic-commerce-feed/releases/tag/v1.0.0](https://github.com/tomeckiStudio/agentic-commerce-feed/releases/tag/v1.0.0)
 2. Go to Plugins -> Add Plugin
 3. Click on the "Upload plugin" button
 4. Choose the downloaded file and click on the "Install Now" button
@@ -60,13 +66,14 @@ Standard plugin installation on WordPress:
 ## :worried: Limitations
 - You cannot export Variants. Currently, only simple products are supported - awaiting clarification from OpenAI
 - You can export Geo Price and Geo Availability, but these values are not validated - awaiting clarification from OpenAI
+- Problem with postcodes when exporting shipping data - planned improvement in January 26'
+- Review data - awaiting clarification from OpenAI
 
 <div align="right">
   <a href="#readme-top">[Go to top]</a>
 </div>
 
 ## :book: Documentation
-Guidelines: 
 Dev docs:
 
 <div align="right">
@@ -76,8 +83,10 @@ Dev docs:
 ## :sos: Support
 > \[!IMPORTANT]
 >
-> **I do not offer any guaranteed support.** (But if you buy me a coffee, we can talk about it! ;) ) You use the plugin at your own risk.<br>
+> **I do not offer any guaranteed support.** You use the plugin at your own risk.<br>
 > Nevertheless, if you encounter a bug, please raise an issue here. If the bug is caused by a plugin, I will try to fix it in the next version.
+
+
 
 <div align="right">
   <a href="#readme-top">[Go to top]</a>
@@ -101,6 +110,7 @@ Dev docs:
 - **Code optimisation & performance** — load only on cron/admin; avoid loading on every frontend request.  
 - **`enable_search` vs. catalog visibility** — honor `product_catalog_visibility` (avoid searchable “private” products).  
 - **Lower logging overhead** — reduce I/O and memory footprint, batching where possible. 
+- **Shipping export** - fix export of shipping data.
 
 03.2026
 - **WooCommerce-respect logging** — normalize to WC logger levels (info/error) and contexts.
@@ -164,9 +174,11 @@ Please ⭐️ this repository if this project helped you!
 
 
 ## :page_facing_up: License
+[GNU GPL V3](https://github.com/tomeckiStudio/agentic-commerce-feed/blob/main/LICENSE)
+
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-ADDITIONAL TERMS per GNU GPL Section 7
+ADDITIONAL TERMS per GNU GPL Section 7<br>
 The origin of the Program MUST NOT be misrepresented; you MUST NOT claim that you wrote the original Program. Altered source versions MUST be plainly marked as such, and MUST NOT be misrepresented as being the original Program.
 
 IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
