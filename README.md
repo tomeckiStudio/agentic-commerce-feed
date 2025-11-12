@@ -74,7 +74,7 @@ Standard plugin installation on WordPress:
 </div>
 
 ## :book: Documentation
-Dev docs:
+Dev docs: https://github.com/tomeckiStudio/agentic-commerce-feed/wiki
 
 <div align="right">
   <a href="#readme-top">[Go to top]</a>
