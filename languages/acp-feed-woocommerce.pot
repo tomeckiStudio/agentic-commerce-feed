@@ -1,0 +1,2038 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Agentic Commerce Feed For WooCommerce\n"
+"POT-Creation-Date: 2025-11-12 14:00+0000\n"
+"PO-Revision-Date: 2025-10-31 21:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: agentic-commerce-feed.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: agentic-commerce-feed.php:86
+msgid "Settings"
+msgstr ""
+
+#: agentic-commerce-feed.php:87
+msgid "GitHub"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:36
+#: includes/class-acp-feed-builder.php:60
+#, php-format
+msgid "Invalid %s value."
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:37
+#: includes/class-acp-feed-builder.php:61
+#, php-format
+msgid "Expected 'true' or 'false', got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:79
+msgid "ACP: enable_checkout can't be true when ACP: enable_search is false"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:99
+msgid "ACP: id can't be empty"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:117
+msgid "ACP: id can't be longer than 100 characters, can't be trimmed"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:132
+msgid "Invalid ACP: id (not alphanumeric)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:155
+msgid "Invalid ACP: gtin (length not between 8 and 14)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:170
+msgid "Invalid ACP: gtin (not numeric)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:184
+#: includes/class-acp-feed-builder.php:1652
+#: includes/class-acp-feed-builder.php:1698
+#: includes/class-acp-feed-builder.php:1817
+#: includes/class-acp-feed-builder.php:1861
+#: includes/class-acp-feed-builder.php:1905
+#: includes/class-acp-feed-builder.php:2022
+#: includes/class-acp-feed-builder.php:2096
+#: includes/class-acp-feed-builder.php:2128
+#: includes/class-acp-feed-builder.php:2158
+#: includes/class-acp-feed-builder.php:2247
+#: includes/class-acp-feed-builder.php:2344
+#, php-format
+msgid "%s is optional but recommended."
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:197
+msgid "ACP: mpn is required if ACP: gtin is empty."
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:216
+#: includes/class-acp-feed-builder.php:280
+#: includes/class-acp-feed-builder.php:329
+#: includes/class-acp-feed-builder.php:453
+#: includes/class-acp-feed-builder.php:502
+#: includes/class-acp-feed-builder.php:1057
+#: includes/class-acp-feed-builder.php:1431
+#: includes/class-acp-feed-builder.php:1726
+#: includes/class-acp-feed-builder.php:2007
+#: includes/class-acp-feed-builder.php:2081
+#, php-format
+msgid "Too long %s (>%s)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:231
+msgid "Invalid ACP: mpn (not alphanumeric)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:250
+#: includes/class-acp-feed-builder.php:299
+#: includes/class-acp-feed-builder.php:348
+#: includes/class-acp-feed-builder.php:368
+#: includes/class-acp-feed-builder.php:403
+#: includes/class-acp-feed-builder.php:423
+#: includes/class-acp-feed-builder.php:472
+#: includes/class-acp-feed-builder.php:630
+#: includes/class-acp-feed-builder.php:689
+#: includes/class-acp-feed-builder.php:837
+#: includes/class-acp-feed-builder.php:959
+#: includes/class-acp-feed-builder.php:1098
+#: includes/class-acp-feed-builder.php:1295
+#: includes/class-acp-feed-builder.php:1401
+#: includes/class-acp-feed-builder.php:1450
+#: includes/class-acp-feed-builder.php:1505
+#: includes/class-acp-feed-builder.php:1544
+#: includes/class-acp-feed-builder.php:1563
+#, php-format
+msgid "Empty %s."
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:270
+#: includes/class-acp-feed-builder.php:319
+#: includes/class-acp-feed-builder.php:443
+#: includes/class-acp-feed-builder.php:492
+#: includes/class-acp-feed-builder.php:1047
+#: includes/class-acp-feed-builder.php:1421
+#: includes/class-acp-feed-builder.php:1716
+#: includes/class-acp-feed-builder.php:1997
+#: includes/class-acp-feed-builder.php:2071
+#, php-format
+msgid "%s was too long (>%s), truncated to the correct length"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:385
+msgid "Invalid ACP: condition (not one of: 'new', 'refurbished', 'used')"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:524
+#: includes/class-acp-feed-builder.php:547
+#: includes/class-acp-feed-builder.php:570
+#: includes/class-acp-feed-builder.php:593
+#: includes/class-acp-feed-builder.php:647
+#: includes/class-acp-feed-builder.php:854
+#: includes/class-acp-feed-builder.php:876
+#: includes/class-acp-feed-builder.php:899
+#: includes/class-acp-feed-builder.php:941
+#: includes/class-acp-feed-builder.php:981
+#: includes/class-acp-feed-builder.php:1004
+#: includes/class-acp-feed-builder.php:1116
+#: includes/class-acp-feed-builder.php:1194
+#: includes/class-acp-feed-builder.php:1258
+#: includes/class-acp-feed-builder.php:1363
+#: includes/class-acp-feed-builder.php:1667
+#, php-format
+msgid "Invalid %s, incorrect format."
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:525
+#, php-format
+msgid "Expected 'LxWxH unit', e.g. 10x20x30 cm, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:548
+#: includes/class-acp-feed-builder.php:571
+#: includes/class-acp-feed-builder.php:594
+#, php-format
+msgid "Expected 'number unit', e.g. 10 cm, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:611
+msgid ""
+"Incomplete ACP: dimensions (if any of length, width, height is set, then all "
+"must be set)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:648
+#: includes/class-acp-feed-builder.php:982
+#, php-format
+msgid "Expected 'number unit', e.g. 10 kg, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:669
+#: includes/class-acp-feed-builder.php:1079
+#: includes/class-acp-feed-builder.php:1235
+#: includes/class-acp-feed-builder.php:2143
+#: includes/class-acp-feed-builder.php:2324
+#, php-format
+msgid "Invalid %s, incorrect value"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:670
+#, php-format
+msgid ""
+"Expected one of 'newborn', 'infant', 'toddler', 'kids', 'adult', got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:706
+msgid "Invalid ACP: image_link (not a valid image: jpeg/png)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:745
+msgid "Invalid ACP: additional_image_link (not a valid image: jpeg/png)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:761
+msgid "No valid ACP: additional_image_links (not a valid image: jpeg/png)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:784
+msgid "Invalid ACP: video_link (not a valid URL)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:806
+msgid "Invalid ACP: model_3d_link (not a valid URL)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:824
+msgid "ACP: model_3d_link should be in preferred format (GLB/GLTF)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:855
+#: includes/class-acp-feed-builder.php:877
+#: includes/class-acp-feed-builder.php:900
+#: includes/class-acp-feed-builder.php:1340
+#: includes/class-acp-feed-builder.php:2232
+#, php-format
+msgid "Expected 'number currency', e.g. 10.99 USD, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:919
+msgid "Invalid ACP: sale_price (not less than regular price)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:942
+#, php-format
+msgid ""
+"Expected 'YYYY-MM-DD / YYYY-MM-DD', e.g. 2055-05-04 / 2056-07-06, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1005
+#, php-format
+msgid "Expected 'number unit', e.g. 1 kg, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1022
+msgid ""
+"Incomplete Measure (if any of ACP: unit_pricing_measure, ACP: base_measure "
+"is set, then both must be set)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1080
+#: includes/class-acp-feed-builder.php:2325
+#, php-format
+msgid "Expected 'in_stock', 'out_of_stock' or 'preorder', got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1117
+#: includes/class-acp-feed-builder.php:1195
+#: includes/class-acp-feed-builder.php:1364
+#, php-format
+msgid "Expected 'YYYY-MM-DD', e.g. 2055-05-06, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1135
+#: includes/class-acp-feed-builder.php:1213
+#: includes/class-acp-feed-builder.php:1382
+#, php-format
+msgid "Invalid %s (not a future date)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1157
+#: includes/class-acp-feed-builder.php:1171
+#: includes/class-acp-feed-builder.php:1601
+#: includes/class-acp-feed-builder.php:1615
+#: includes/class-acp-feed-builder.php:1790
+#: includes/class-acp-feed-builder.php:1804
+#: includes/class-acp-feed-builder.php:1833
+#: includes/class-acp-feed-builder.php:1847
+#: includes/class-acp-feed-builder.php:1921
+#: includes/class-acp-feed-builder.php:1935
+#, php-format
+msgid "Invalid %s (not a non-negative integer)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1236
+#, php-format
+msgid "Expected 'in_store', 'reserve' or 'not_supported', got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1259
+#, php-format
+msgid "Expected 'number unit', e.g. 10 days, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1274
+msgid "ACP: pickup_sla set while ACP: pickup_method is empty"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1322
+msgid "Invalid ACP: shipping (not in format country:region:service:price)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1339
+msgid "Invalid Shipping Price in ACP: shipping, incorrect format"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1467
+msgid "Invalid ACP: seller_url (not a valid URL)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1488
+msgid "Invalid ACP: seller_privacy_policy URL (not a valid URL)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1527
+msgid "Invalid ACP: seller_tos URL (not a valid URL)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1580
+msgid "Invalid ACP: return_policy URL (not a valid URL)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1637
+msgid "Invalid ACP: popularity_score (not a number between 0 and 5)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1668
+msgid "Expected 'number%', e.g. 5%, got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1684
+msgid "Invalid ACP: return_rate (not between 0% and 100%)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1742
+msgid ""
+"ACP: warning is recommended to be set while ACP: enable_checkout is true"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1758
+msgid "Invalid ACP: warning_url (not a valid URL)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1773
+msgid ""
+"ACP: warning_url is recommended to be set while ACP: enable_checkout is true"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1877
+#: includes/class-acp-feed-builder.php:1891
+msgid "Invalid ACP: product_review_rating (not a number between 0 and 5)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:1958
+#: includes/class-acp-feed-builder.php:1972
+msgid "Invalid ACP: store_review_rating (not a number between 0 and 5)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2039
+#: includes/class-acp-feed-builder.php:2053
+msgid "Invalid ACP: raw_review_data (not a valid JSON)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2113
+msgid ""
+"Invalid ACP: related_product_id (not alphanumeric IDs separated by commas)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2144
+#, php-format
+msgid ""
+"Expected 'part_of_set', 'required_part', 'often_bought_with', 'substitute', "
+"'different_brand' or 'accessory', got: '%s'"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2181
+#: includes/class-acp-feed-builder.php:2199
+msgid "Invalid ACP: geo_price (not in format country:price currency)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2216
+msgid "Invalid country code in ACP: geo_price (expected ISO 3166-1 alpha-2)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2231
+msgid "Invalid price in ACP: geo_price, incorrect format"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2270
+#: includes/class-acp-feed-builder.php:2290
+msgid "Invalid ACP: geo_availability (not in format country:availability)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:2307
+msgid ""
+"Invalid country code in ACP: geo_availability (expected ISO 3166-1 alpha-2)"
+msgstr ""
+
+#: includes/class-acp-feed-builder.php:3559
+msgid "Shipping"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:242
+#: includes/class-acp-feed-settings.php:243
+msgid "Agentic Commerce Feed"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:266
+msgid "Feed Settings"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:267
+msgid "Configure logging, scheduling and defaults for feed generation."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:272
+msgid "Logger"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:278
+msgid "Enable logging."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:283
+msgid "Logger method"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:290
+msgid "No log"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:290
+msgid "Do not log any messages"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:291
+msgid "Custom log"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:291
+msgid "Log messages to a separate file in the main directory of the site."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:292
+msgid "WooCommerce log"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:292
+msgid "Use the WooCommerce log system."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:294
+msgid "Choose logging method."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:300
+msgid "Cron method"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:307
+#: includes/class-acp-feed-settings.php:445
+#: includes/class-acp-feed-settings.php:490
+#: includes/class-acp-feed-settings.php:576
+#: includes/class-acp-feed-settings.php:599
+#: includes/class-acp-feed-settings.php:644
+#: includes/class-acp-feed-settings.php:667
+#: includes/class-acp-feed-settings.php:691
+#: includes/class-acp-feed-settings.php:715
+#: includes/class-acp-feed-settings.php:739
+#: includes/class-acp-feed-settings.php:785
+#: includes/class-acp-feed-settings.php:808
+#: includes/class-acp-feed-settings.php:875
+#: includes/class-acp-feed-settings.php:920
+#: includes/class-acp-feed-settings.php:943
+#: includes/class-acp-feed-settings.php:1035
+#: includes/class-acp-feed-settings.php:1081
+#: includes/class-acp-feed-settings.php:1176
+#: includes/class-acp-feed-settings.php:1472
+#: includes/class-acp-feed-settings.php:1495
+#: includes/class-acp-feed-settings.php:1586
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:307
+msgid "Uses the WooCommerce cron system"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:308
+msgid "WordPress"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:308
+msgid "Uses the WordPress cron system"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:309
+msgid "Server"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:309
+msgid "Set up cron yourself on the server."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:311
+msgid "Choose cron method."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:316
+msgid "Interval (minutes)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:324
+msgid "How often should cron run?"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:329
+msgid "Server cron URL"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:335
+msgid "Use this for your server cron."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:341
+msgid "Batch size"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:349
+msgid "How many products are to be processed in a single batch?"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:356
+msgid "Product Settings"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:357
+#: includes/class-acp-feed-settings.php:380
+msgid "Configure product options for feed."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:362
+msgid "Too long value"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:369
+msgid "Truncate"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:369
+msgid "Truncate the value to fit the required length."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:370
+msgid "Omit product"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:370
+msgid ""
+"Omit the product entirely if any of the values exceeds the required length."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:372
+msgid ""
+"Select what should happen if the value of the attribute to be exported is "
+"too long."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:379
+msgid "Product Mapping"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:386
+#, php-format
+msgid "%s Product search active (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:392
+msgid ""
+"AI searches can only be performed on products that have been published and "
+"the rest of the required attributes are specified correctly."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:399
+#, php-format
+msgid "%s Product checkout active (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:405
+msgid ""
+"AI will only allow purchase of the product if:<br>1) enable_search is true;"
+"<br>2) the product is in stock or on back order;<br>3) the rest of the "
+"required attributes are specified correctly."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:412
+#, php-format
+msgid "%s Product ID (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:420
+#: includes/class-acp-feed-settings.php:2666
+msgid "Product ID"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:420
+msgid "Use Product ID set assigned by WooCommerce"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:421
+msgid "Product SKU"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:421
+msgid "Use Product SKU that you can assign in product settings."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:422
+msgid "SKU or ID"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:422
+msgid "Use the product SKU first; if it is not set, use the product ID."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:423
+#: includes/class-acp-feed-settings.php:446
+#: includes/class-acp-feed-settings.php:468
+#: includes/class-acp-feed-settings.php:491
+#: includes/class-acp-feed-settings.php:515
+#: includes/class-acp-feed-settings.php:554
+#: includes/class-acp-feed-settings.php:577
+#: includes/class-acp-feed-settings.php:600
+#: includes/class-acp-feed-settings.php:622
+#: includes/class-acp-feed-settings.php:645
+#: includes/class-acp-feed-settings.php:668
+#: includes/class-acp-feed-settings.php:692
+#: includes/class-acp-feed-settings.php:716
+#: includes/class-acp-feed-settings.php:740
+#: includes/class-acp-feed-settings.php:762
+#: includes/class-acp-feed-settings.php:786
+#: includes/class-acp-feed-settings.php:809
+#: includes/class-acp-feed-settings.php:831
+#: includes/class-acp-feed-settings.php:853
+#: includes/class-acp-feed-settings.php:876
+#: includes/class-acp-feed-settings.php:898
+#: includes/class-acp-feed-settings.php:921
+#: includes/class-acp-feed-settings.php:944
+#: includes/class-acp-feed-settings.php:967
+#: includes/class-acp-feed-settings.php:990
+#: includes/class-acp-feed-settings.php:1013
+#: includes/class-acp-feed-settings.php:1036
+#: includes/class-acp-feed-settings.php:1058
+#: includes/class-acp-feed-settings.php:1082
+#: includes/class-acp-feed-settings.php:1104
+#: includes/class-acp-feed-settings.php:1126
+#: includes/class-acp-feed-settings.php:1148
+#: includes/class-acp-feed-settings.php:1177
+#: includes/class-acp-feed-settings.php:1199
+#: includes/class-acp-feed-settings.php:1222
+#: includes/class-acp-feed-settings.php:1245
+#: includes/class-acp-feed-settings.php:1268
+#: includes/class-acp-feed-settings.php:1292
+#: includes/class-acp-feed-settings.php:1316
+#: includes/class-acp-feed-settings.php:1339
+#: includes/class-acp-feed-settings.php:1361
+#: includes/class-acp-feed-settings.php:1383
+#: includes/class-acp-feed-settings.php:1405
+#: includes/class-acp-feed-settings.php:1427
+#: includes/class-acp-feed-settings.php:1450
+#: includes/class-acp-feed-settings.php:1473
+#: includes/class-acp-feed-settings.php:1496
+#: includes/class-acp-feed-settings.php:1519
+#: includes/class-acp-feed-settings.php:1542
+#: includes/class-acp-feed-settings.php:1564
+#: includes/class-acp-feed-settings.php:1587
+#: includes/class-acp-feed-settings.php:1632
+#: includes/class-acp-feed-settings.php:1666
+#: includes/class-acp-feed-settings.php:1688
+msgid "Attribute"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:423
+#: includes/class-acp-feed-settings.php:446
+#: includes/class-acp-feed-settings.php:468
+#: includes/class-acp-feed-settings.php:491
+#: includes/class-acp-feed-settings.php:515
+#: includes/class-acp-feed-settings.php:554
+#: includes/class-acp-feed-settings.php:577
+#: includes/class-acp-feed-settings.php:600
+#: includes/class-acp-feed-settings.php:622
+#: includes/class-acp-feed-settings.php:645
+#: includes/class-acp-feed-settings.php:668
+#: includes/class-acp-feed-settings.php:692
+#: includes/class-acp-feed-settings.php:716
+#: includes/class-acp-feed-settings.php:740
+#: includes/class-acp-feed-settings.php:762
+#: includes/class-acp-feed-settings.php:786
+#: includes/class-acp-feed-settings.php:809
+#: includes/class-acp-feed-settings.php:831
+#: includes/class-acp-feed-settings.php:853
+#: includes/class-acp-feed-settings.php:876
+#: includes/class-acp-feed-settings.php:898
+#: includes/class-acp-feed-settings.php:921
+#: includes/class-acp-feed-settings.php:944
+#: includes/class-acp-feed-settings.php:967
+#: includes/class-acp-feed-settings.php:990
+#: includes/class-acp-feed-settings.php:1013
+#: includes/class-acp-feed-settings.php:1036
+#: includes/class-acp-feed-settings.php:1058
+#: includes/class-acp-feed-settings.php:1082
+#: includes/class-acp-feed-settings.php:1104
+#: includes/class-acp-feed-settings.php:1126
+#: includes/class-acp-feed-settings.php:1148
+#: includes/class-acp-feed-settings.php:1177
+#: includes/class-acp-feed-settings.php:1199
+#: includes/class-acp-feed-settings.php:1222
+#: includes/class-acp-feed-settings.php:1245
+#: includes/class-acp-feed-settings.php:1268
+#: includes/class-acp-feed-settings.php:1292
+#: includes/class-acp-feed-settings.php:1316
+#: includes/class-acp-feed-settings.php:1339
+#: includes/class-acp-feed-settings.php:1361
+#: includes/class-acp-feed-settings.php:1383
+#: includes/class-acp-feed-settings.php:1405
+#: includes/class-acp-feed-settings.php:1427
+#: includes/class-acp-feed-settings.php:1450
+#: includes/class-acp-feed-settings.php:1473
+#: includes/class-acp-feed-settings.php:1496
+#: includes/class-acp-feed-settings.php:1519
+#: includes/class-acp-feed-settings.php:1542
+#: includes/class-acp-feed-settings.php:1564
+#: includes/class-acp-feed-settings.php:1587
+#: includes/class-acp-feed-settings.php:1632
+#: includes/class-acp-feed-settings.php:1666
+#: includes/class-acp-feed-settings.php:1688
+msgid ""
+"Use the product attribute; enter the attribute key, e.g. 'pa_attribute_name' "
+"(global attribute), 'diffrent_attribute_name' (from the product level) or "
+"something else."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:424
+#: includes/class-acp-feed-settings.php:447
+#: includes/class-acp-feed-settings.php:469
+#: includes/class-acp-feed-settings.php:492
+#: includes/class-acp-feed-settings.php:516
+#: includes/class-acp-feed-settings.php:555
+#: includes/class-acp-feed-settings.php:578
+#: includes/class-acp-feed-settings.php:601
+#: includes/class-acp-feed-settings.php:623
+#: includes/class-acp-feed-settings.php:646
+#: includes/class-acp-feed-settings.php:669
+#: includes/class-acp-feed-settings.php:693
+#: includes/class-acp-feed-settings.php:717
+#: includes/class-acp-feed-settings.php:741
+#: includes/class-acp-feed-settings.php:763
+#: includes/class-acp-feed-settings.php:787
+#: includes/class-acp-feed-settings.php:810
+#: includes/class-acp-feed-settings.php:832
+#: includes/class-acp-feed-settings.php:854
+#: includes/class-acp-feed-settings.php:877
+#: includes/class-acp-feed-settings.php:899
+#: includes/class-acp-feed-settings.php:922
+#: includes/class-acp-feed-settings.php:945
+#: includes/class-acp-feed-settings.php:968
+#: includes/class-acp-feed-settings.php:991
+#: includes/class-acp-feed-settings.php:1014
+#: includes/class-acp-feed-settings.php:1037
+#: includes/class-acp-feed-settings.php:1059
+#: includes/class-acp-feed-settings.php:1083
+#: includes/class-acp-feed-settings.php:1105
+#: includes/class-acp-feed-settings.php:1127
+#: includes/class-acp-feed-settings.php:1149
+#: includes/class-acp-feed-settings.php:1178
+#: includes/class-acp-feed-settings.php:1200
+#: includes/class-acp-feed-settings.php:1223
+#: includes/class-acp-feed-settings.php:1246
+#: includes/class-acp-feed-settings.php:1269
+#: includes/class-acp-feed-settings.php:1293
+#: includes/class-acp-feed-settings.php:1317
+#: includes/class-acp-feed-settings.php:1340
+#: includes/class-acp-feed-settings.php:1362
+#: includes/class-acp-feed-settings.php:1384
+#: includes/class-acp-feed-settings.php:1406
+#: includes/class-acp-feed-settings.php:1428
+#: includes/class-acp-feed-settings.php:1451
+#: includes/class-acp-feed-settings.php:1474
+#: includes/class-acp-feed-settings.php:1497
+#: includes/class-acp-feed-settings.php:1520
+#: includes/class-acp-feed-settings.php:1543
+#: includes/class-acp-feed-settings.php:1565
+#: includes/class-acp-feed-settings.php:1588
+#: includes/class-acp-feed-settings.php:1633
+#: includes/class-acp-feed-settings.php:1667
+#: includes/class-acp-feed-settings.php:1689
+msgid "Metadata"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:424
+#: includes/class-acp-feed-settings.php:447
+#: includes/class-acp-feed-settings.php:469
+#: includes/class-acp-feed-settings.php:492
+#: includes/class-acp-feed-settings.php:516
+#: includes/class-acp-feed-settings.php:555
+#: includes/class-acp-feed-settings.php:578
+#: includes/class-acp-feed-settings.php:601
+#: includes/class-acp-feed-settings.php:623
+#: includes/class-acp-feed-settings.php:646
+#: includes/class-acp-feed-settings.php:669
+#: includes/class-acp-feed-settings.php:693
+#: includes/class-acp-feed-settings.php:717
+#: includes/class-acp-feed-settings.php:741
+#: includes/class-acp-feed-settings.php:763
+#: includes/class-acp-feed-settings.php:787
+#: includes/class-acp-feed-settings.php:810
+#: includes/class-acp-feed-settings.php:832
+#: includes/class-acp-feed-settings.php:854
+#: includes/class-acp-feed-settings.php:877
+#: includes/class-acp-feed-settings.php:899
+#: includes/class-acp-feed-settings.php:922
+#: includes/class-acp-feed-settings.php:945
+#: includes/class-acp-feed-settings.php:968
+#: includes/class-acp-feed-settings.php:991
+#: includes/class-acp-feed-settings.php:1014
+#: includes/class-acp-feed-settings.php:1037
+#: includes/class-acp-feed-settings.php:1059
+#: includes/class-acp-feed-settings.php:1083
+#: includes/class-acp-feed-settings.php:1105
+#: includes/class-acp-feed-settings.php:1127
+#: includes/class-acp-feed-settings.php:1149
+#: includes/class-acp-feed-settings.php:1178
+#: includes/class-acp-feed-settings.php:1200
+#: includes/class-acp-feed-settings.php:1223
+#: includes/class-acp-feed-settings.php:1246
+#: includes/class-acp-feed-settings.php:1269
+#: includes/class-acp-feed-settings.php:1293
+#: includes/class-acp-feed-settings.php:1317
+#: includes/class-acp-feed-settings.php:1340
+#: includes/class-acp-feed-settings.php:1362
+#: includes/class-acp-feed-settings.php:1384
+#: includes/class-acp-feed-settings.php:1406
+#: includes/class-acp-feed-settings.php:1428
+#: includes/class-acp-feed-settings.php:1451
+#: includes/class-acp-feed-settings.php:1474
+#: includes/class-acp-feed-settings.php:1497
+#: includes/class-acp-feed-settings.php:1520
+#: includes/class-acp-feed-settings.php:1543
+#: includes/class-acp-feed-settings.php:1565
+#: includes/class-acp-feed-settings.php:1588
+#: includes/class-acp-feed-settings.php:1633
+#: includes/class-acp-feed-settings.php:1667
+#: includes/class-acp-feed-settings.php:1689
+msgid "Use product metadata; enter the meta key, or ACF field name."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:427
+msgid ""
+"Select the source of the product identifier: SKU, ID, product attribute, or "
+"metadata."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:428
+#: includes/class-acp-feed-settings.php:496
+#: includes/class-acp-feed-settings.php:520
+#: includes/class-acp-feed-settings.php:537
+#: includes/class-acp-feed-settings.php:559
+#: includes/class-acp-feed-settings.php:582
+#: includes/class-acp-feed-settings.php:627
+#: includes/class-acp-feed-settings.php:745
+#: includes/class-acp-feed-settings.php:791
+#: includes/class-acp-feed-settings.php:881
+#: includes/class-acp-feed-settings.php:1041
+#: includes/class-acp-feed-settings.php:1087
+#: includes/class-acp-feed-settings.php:1250
+#: includes/class-acp-feed-settings.php:1321
+#: includes/class-acp-feed-settings.php:1344
+msgid "Required"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:429
+msgid ""
+"Alphanumeric; max 100 chars; must remain stable over time; must be unique "
+"for each product in the feed."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:437
+#, php-format
+msgid "Product GTIN (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:445
+msgid ""
+"Use the 'GTIN, UPC, EAN, ISBN' field in the product settings in the "
+"'Inventory' tab."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:450
+msgid "Select the source of the GTIN value."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:451
+#: includes/class-acp-feed-settings.php:1366
+#: includes/class-acp-feed-settings.php:1388
+#: includes/class-acp-feed-settings.php:1455
+#: includes/class-acp-feed-settings.php:1478
+#: includes/class-acp-feed-settings.php:1501
+#: includes/class-acp-feed-settings.php:1569
+#: includes/class-acp-feed-settings.php:1592
+#: includes/class-acp-feed-settings.php:1615
+#: includes/class-acp-feed-settings.php:1637
+#: includes/class-acp-feed-settings.php:1671
+#: includes/class-acp-feed-settings.php:1693
+msgid "Recommended"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:452
+msgid "Provide 8-14 digits with no dashes or spaces."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:460
+#, php-format
+msgid "Product MPN (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:472
+msgid "Select the source of the MPN value."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:473
+msgid "Required if GTIN is missing"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:474
+msgid "Alphanumeric; max 70 chars."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:482
+#, php-format
+msgid "%s Product title (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:490
+msgid "Use the Product Title."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:495
+msgid "Select the source of the product title."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:497
+msgid "Max 150 chars; avoid all caps for best rendering."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:505
+#, php-format
+msgid "%s Product description (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:513
+msgid "Long description"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:513
+msgid "Long description of the product which you normally add to the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:514
+msgid "Short description"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:514
+msgid "Short description of the product which you normally add to the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:519
+msgid "Which description should be sent?"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:521
+msgid "Max 5,000 chars; plain text only."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:529
+#, php-format
+msgid "%s Product link (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:536
+msgid "Link to product. Variable: %product_link% - link to product"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:538
+msgid "URL must return HTTP 200; HTTPS is preferred."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:546
+#, php-format
+msgid "%s Product condition (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:558
+msgid "Condition of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:560
+msgid "Use lower-case strings, allowed: 'new', 'refurbished', or 'used'."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:568
+#, php-format
+msgid "%s Product category (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:576
+msgid "Use the product categories assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:581
+msgid "Category of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:583
+msgid ""
+"Use the '>' separator between taxonomy levels, for example: Apparel > Shoes."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:591
+#, php-format
+msgid "%s Product brand (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:599
+msgid "Use the product brands assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:604
+msgid "Brand of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:605
+msgid ""
+"Required for all products except movies, books, and musical recording brands"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:606
+#: includes/class-acp-feed-settings.php:1228
+msgid "Max 70 chars."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:614
+#, php-format
+msgid "%s Product material (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:626
+msgid "Material of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:628
+msgid "Max 100 chars."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:636
+#, php-format
+msgid "Product dimensions (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:644
+msgid "Use the product length, width and height assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:649
+msgid "Dimensions of the product in LxWxH format with unit (e.g. 12x8x5 cm)."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:650
+#: includes/class-acp-feed-settings.php:673
+#: includes/class-acp-feed-settings.php:697
+#: includes/class-acp-feed-settings.php:721
+#: includes/class-acp-feed-settings.php:767
+#: includes/class-acp-feed-settings.php:814
+#: includes/class-acp-feed-settings.php:836
+#: includes/class-acp-feed-settings.php:858
+#: includes/class-acp-feed-settings.php:903
+#: includes/class-acp-feed-settings.php:926
+#: includes/class-acp-feed-settings.php:949
+#: includes/class-acp-feed-settings.php:972
+#: includes/class-acp-feed-settings.php:995
+#: includes/class-acp-feed-settings.php:1018
+#: includes/class-acp-feed-settings.php:1109
+#: includes/class-acp-feed-settings.php:1131
+#: includes/class-acp-feed-settings.php:1153
+#: includes/class-acp-feed-settings.php:1204
+#: includes/class-acp-feed-settings.php:1524
+#: includes/class-acp-feed-settings.php:1547
+msgid "Optional"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:651
+msgid ""
+"Units required if provided. Unit in abbreviations such as in, cm, or mm."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:659
+#, php-format
+msgid "Product length (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:667
+msgid "Use the product length assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:672
+msgid "Length of the product with unit (e.g. 10 mm)."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:674
+#: includes/class-acp-feed-settings.php:698
+#: includes/class-acp-feed-settings.php:722
+msgid "Include a unit such as mm, cm, in, or ft."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:675
+#: includes/class-acp-feed-settings.php:699
+#: includes/class-acp-feed-settings.php:723
+msgid "Provide length, width, and height when using individual fields."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:683
+#, php-format
+msgid "Product width (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:691
+msgid "Use the product width assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:696
+msgid "Width of the product with unit (e.g. 10 mm)."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:707
+#, php-format
+msgid "Product height (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:715
+msgid "Use the product height assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:720
+msgid "Height of the product with unit (e.g. 10 mm)."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:731
+#, php-format
+msgid "%s Product weight (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:739
+msgid "Use the product weight assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:744
+msgid "Weight of the product with unit (e.g. 1.5 lb)."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:746
+msgid "Provide a positive number and unit such as kg, g, lb, or oz."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:754
+#, php-format
+msgid "Product age group (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:766
+msgid ""
+"Age group of the product. Allowed values: 'newborn', 'infant', 'toddler', "
+"'kids', 'adult'."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:768
+msgid "Use lower-case values exactly as listed."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:777
+#, php-format
+msgid "%s Product image link (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:785
+msgid "Use the product image assigned in WooCommerce (main product image)."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:790
+msgid "Link to the main product image."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:792
+msgid "Use a direct JPEG or PNG URL; HTTPS preferred."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:800
+#, php-format
+msgid "Product additional image links (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:808
+msgid "Use the product gallery images assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:813
+msgid "Links to additional product images."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:815
+msgid "Provide a comma-separated list or array of valid image URLs."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:823
+#, php-format
+msgid "Product video links (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:835
+msgid "Links to product videos."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:837
+msgid "URLs must be publicly accessible without authentication."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:845
+#, php-format
+msgid "Product 3D model links (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:857
+msgid "Links to product 3D models."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:859
+msgid "Use publicly accessible URLs; GLB or GLTF formats are preferred."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:867
+#, php-format
+msgid "%s Product price (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:875
+msgid "Use the product price assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:880
+msgid "Price of the product. Price with currency, e.g. 29.99 USD"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:882
+#: includes/class-acp-feed-settings.php:904
+msgid "Include an ISO 4217 currency code in the value."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:890
+#, php-format
+msgid "Product applicable taxes and fees (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:902
+msgid ""
+"Applicable taxes and fees for the product. Price with currency, e.g. 29.99 "
+"USD"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:912
+#, php-format
+msgid "Product sale price (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:920
+msgid "Use the product sale price assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:925
+msgid "Sale price of the product. Price with currency, e.g. 19.99 USD"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:927
+msgid ""
+"Sale price must be less than or equal to the regular price and include "
+"currency."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:935
+#, php-format
+msgid "Product sale price effective date (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:943
+msgid "Use the product sale price schedule assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:948
+msgid "Effective date range for the sale price of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:950
+msgid "Provide ISO 8601 start and end dates where the start precedes the end."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:951
+msgid "Required when a sale price is provided."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:959
+#, php-format
+msgid "Product unit pricing measure (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:971
+msgid "The unit pricing measure for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:973
+msgid "Provide a numeric value with unit, such as 16 oz."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:974
+msgid "Submit together with the base measure."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:982
+#, php-format
+msgid "Product base measure (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:994
+msgid "The base measure for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:996
+msgid "Provide the unit reference, such as 1 oz."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:997
+msgid "Submit together with the unit pricing measure."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1005
+#, php-format
+msgid "Product pricing trend (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1017
+msgid "The pricing trend for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1019
+msgid "Limit to 80 characters, for example 'Lowest price in 6 months'."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1027
+#, php-format
+msgid "%s Product availability (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1035
+msgid "Use the product stock management system assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1040
+msgid "Availability of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1042
+msgid ""
+"Use lower-case values, allowed: 'in_stock', 'out_of_stock', or 'preorder'."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1050
+#, php-format
+msgid "Product availability date (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1062
+msgid "The availability date for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1063
+msgid "Required when availability is preorder"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1064
+#: includes/class-acp-feed-settings.php:1110
+#: includes/class-acp-feed-settings.php:1205
+msgid "Provide a future ISO 8601 date."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1065
+msgid "Only needed when availability is set to preorder."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1073
+#, php-format
+msgid "%s Product inventory quantity (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1081
+msgid "Use the product inventory quantity assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1086
+msgid "Inventory quantity of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1088
+#: includes/class-acp-feed-settings.php:1525
+msgid "Provide a non-negative integer."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1096
+#, php-format
+msgid "Product expiration date (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1108
+msgid "The expiration date of the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1118
+#, php-format
+msgid "Product pickup method (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1130
+msgid "The pickup method for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1132
+msgid ""
+"Use lower-case values, allowed: 'in_store', 'reserve', or 'not_supported'."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1140
+#, php-format
+msgid "Product pickup SLA (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1152
+msgid "The pickup SLA for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1154
+msgid "Use a positive integer and time unit, for example 1 day."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1155
+msgid "Pickup method must be provided."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1168
+#, php-format
+msgid "Product shipping (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1176
+msgid "Use the shipping methods assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1181
+msgid "Shipping details for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1182
+msgid "Required where applicable"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1183
+msgid "Use colon-delimited entries such as country:region:service:price."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1191
+#, php-format
+msgid "Product delivery estimate (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1203
+msgid "The delivery estimate for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1213
+#, php-format
+msgid "Product seller name (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1221
+#: includes/class-acp-feed-settings.php:1244
+#: includes/class-acp-feed-settings.php:1267
+#: includes/class-acp-feed-settings.php:1291
+#: includes/class-acp-feed-settings.php:1315
+#: includes/class-acp-feed-settings.php:1338
+#: includes/class-acp-feed-settings.php:1449
+#: includes/class-acp-feed-settings.php:1518
+#: includes/class-acp-feed-settings.php:1541
+msgid "Static value"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1221
+#: includes/class-acp-feed-settings.php:1244
+#: includes/class-acp-feed-settings.php:1267
+#: includes/class-acp-feed-settings.php:1291
+#: includes/class-acp-feed-settings.php:1315
+#: includes/class-acp-feed-settings.php:1338
+#: includes/class-acp-feed-settings.php:1449
+#: includes/class-acp-feed-settings.php:1518
+#: includes/class-acp-feed-settings.php:1541
+msgid "Enter a static value for all products."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1226
+msgid "Name of the seller, e.g. name of your shop"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1227
+msgid "Required for display"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1236
+#, php-format
+msgid "Product seller url (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1249
+msgid "URL of the seller, e.g. url of your shop"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1251
+msgid "HTTPS URL is preferred and should resolve successfully."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1259
+#, php-format
+msgid "Product seller privacy policy (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1272
+msgid "URL of your privacy policy"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1273
+#: includes/class-acp-feed-settings.php:1297
+msgid "Required when checkout is enabled"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1274
+#: includes/class-acp-feed-settings.php:1298
+#: includes/class-acp-feed-settings.php:1322
+msgid "Use an HTTPS URL that resolves successfully."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1275
+#: includes/class-acp-feed-settings.php:1299
+msgid "Depends on enable_checkout being true."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1283
+#, php-format
+msgid "Product seller terms of service (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1296
+msgid "URL of your terms of service"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1307
+#, php-format
+msgid "Product return policy (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1320
+msgid "URL of your return policy"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1330
+#, php-format
+msgid "Product return window (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1343
+msgid "Number of days within which returns are accepted"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1345
+msgid "Provide a positive integer representing days."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1353
+#, php-format
+msgid "Product popularity score (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1365
+msgid "The popularity score for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1367
+msgid "Use a 0-5 scale or another merchant-defined scoring system."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1375
+#, php-format
+msgid "Product return rate (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1387
+msgid "The return rate for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1389
+msgid "Express as a percentage between 0 and 100."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1397
+#, php-format
+msgid "Product warning (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1409
+msgid "The warning for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1410
+#: includes/class-acp-feed-settings.php:1432
+msgid "Recommended for checkout-enabled products"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1411
+msgid "Provide plain text disclaimers such as safety or regulatory notices."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1419
+#, php-format
+msgid "Product warning url (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1431
+msgid "The warning URL for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1433
+msgid "URL must resolve with HTTP 200."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1441
+#, php-format
+msgid "Product age restriction (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1454
+msgid "The age restriction for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1456
+msgid "Provide a positive integer representing the minimum age."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1464
+#, php-format
+msgid "Product review count (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1472
+msgid "Use the product review count of your real reviews for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1477
+msgid "The review count for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1479
+msgid "Provide a non-negative integer based on real reviews."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1487
+#, php-format
+msgid "Product review rating (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1495
+msgid ""
+"Use the product average review rating of your real reviews for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1500
+msgid "The review rating for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1502
+msgid "Use a 0-5 scale averaged from authentic reviews."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1510
+#, php-format
+msgid "Store review count (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1523
+msgid "The review count for the store or brand."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1533
+#, php-format
+msgid "Store review rating (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1546
+msgid "The review rating for the store or brand."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1548
+msgid "Use a 0-5 scale."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1556
+#, php-format
+msgid "Product Q&A count (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1568
+msgid "The Q&A content for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1570
+msgid "Use plain text entries summarizing common questions and answers."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1578
+#, php-format
+msgid "Product raw review data (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1586
+msgid "Use the product reviews data of your real reviews for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1591
+msgid "The raw review data for the product in JSON format."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1593
+msgid "May include JSON or other structured payloads with review details."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1601
+#, php-format
+msgid "Related product IDs (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1608
+msgid "None"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1608
+msgid "Don't include related product IDs."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1609
+msgid "Cross-sell products"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1609
+msgid "Use the cross-sell products assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1610
+msgid "Up-sell products"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1610
+msgid "Use the up-sell products assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1611
+msgid "Both"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1611
+msgid "Use both cross-sell and up-sell products assigned in WooCommerce."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1614
+msgid "The related product IDs for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1616
+msgid "Provide a comma-separated list of associated product IDs."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1624
+#, php-format
+msgid "Relationship type (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1636
+msgid "The relationship type for the related products."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1638
+msgid "Use lower-case values such as part_of_set, accessory, or substitute."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1645
+msgid "Important notice"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1650
+msgid "Be careful with the following ACP fields"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1651
+msgid ""
+"The following options: geo_price and geo_availability can be set, but are "
+"not validated. Waiting for OpenAI"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1658
+#, php-format
+msgid "Product geo price (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1670
+msgid "The geo price for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1672
+msgid "Include regional price details with ISO 4217 currency codes."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1680
+#, php-format
+msgid "Product geo availability (ACP: %s)"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1692
+msgid "The geo availability for the product."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:1694
+msgid "List availability overrides per region using valid ISO 3166 codes."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2423
+msgid "You do not have permission."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2427
+msgid "Agentic Commerce Protocole Feed"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2437
+msgid "Tools"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2440
+msgid "Run build now"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2443
+msgid "Reset build state"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2448
+msgid "Logs"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2450
+msgid "View logs"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2453
+msgid "Download logs"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2514
+msgid "The current logging method does not store log files to display."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2519
+msgid "No log entries found for the current configuration."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2521
+msgid "Showing the most recent log entries:"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2543
+msgid "file is missing"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2550
+msgid "Feed info"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2551
+msgid "Value"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2556
+msgid "Current build state"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2559
+#: includes/class-acp-feed-settings.php:2578
+msgid "Build id"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2563
+#: includes/class-acp-feed-settings.php:2582
+msgid "Created at"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2567
+msgid "Current page"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2571
+msgid "Products to process"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2575
+msgid "Last successful build"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2586
+msgid "Completed at"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2590
+msgid "File path"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2594
+msgid "Public URL"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2606
+msgid "File size"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2610
+msgid "Report"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2619
+msgid "Emitted"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2623
+msgid "Warnings"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2627
+msgid "Failed"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2666
+msgid "Status"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2666
+msgid "Info"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2687
+msgid "No entries for this status."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2695
+msgid "No report entries for the last successful build."
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2698
+msgid "No successful build yet"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2729
+msgid "Requirement"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2737
+msgid "Dependencies"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2745
+msgid "Validation rules"
+msgstr ""
+
+#: includes/class-acp-feed-settings.php:2857
+msgid "Enter custom key"
+msgstr ""
+
+#: includes/class-acp-feed-tools.php:33 includes/class-acp-feed-tools.php:48
+#: includes/class-acp-feed-tools.php:65
+msgid "Forbidden"
+msgstr ""
+
+#: includes/class-acp-feed-tools.php:96
+msgid "Log file not found or inaccessible for download."
+msgstr ""
+
+#: includes/class-acp-feed-tools.php:103
+msgid "Unable to read log file size."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Agentic Commerce Feed For WooCommerce"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Export your products to a feed compatible with the Agentic Commerce Protocol "
+"by OpenAI. Show your products in ChatGPT's Instant Checkout."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "tomeckiStudio"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://tomecki.studio"
+msgstr ""
