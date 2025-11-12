@@ -827,7 +827,7 @@ final class ACP_Feed_Builder {
             }
 
             // ACP: price
-            $acp_price = self::acp_get_regular_price($product);
+            $acp_price = self::acp_get_price($product);
 
             if(empty($acp_price)){
                 ACP_Feed_DBHelper::acp_report(
@@ -2440,6 +2440,14 @@ final class ACP_Feed_Builder {
             self::acp_element($xml_writer, 'geo_price', $acp_geo_price);
             self::acp_element($xml_writer, 'geo_availability', $acp_geo_availability);
             
+            /**
+             * Action hook before ending product element in the feed
+             * Use case: add custom elements to the product
+             * 
+             * @param XMLWriter $xml_writer - XMLWriter object to write XML elements
+             * @param WC_Product $product - WooCommerce product object being processed
+             * @since 1.0.0
+             */
             do_action('acp_feed_before_product_end', $xml_writer, $product);
 
             $xml_writer->endElement(); // </product>
@@ -2511,6 +2519,14 @@ final class ACP_Feed_Builder {
         if($product->get_catalog_visibility() !== 'visible')
             $enable_search = false;
 
+        /**
+         * Filter to modify ACP: enable_search value
+         *
+         * @param bool $enable_search - Current enable_search value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return bool - the filter has to return bool
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_enable_search', $enable_search, $product);
     }
 
@@ -2543,6 +2559,14 @@ final class ACP_Feed_Builder {
             }
         }
 
+        /**
+         * Filter to modify ACP: enable_checkout value
+         *
+         * @param bool $enable_checkout - Current enable_checkout value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return bool - the filter has to return bool
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_enable_checkout', $enable_checkout, $product);
     }
 
@@ -2570,6 +2594,15 @@ final class ACP_Feed_Builder {
         else if($acp_id_get_method === 'meta')
             $acp_id = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_id', ''));
         
+        /**
+         * Filter to modify ACP: id value
+         * 
+         * @param mixed $acp_id - Current id value
+         * @param string $acp_id_get_method - Method used to get the id
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - the filter has to return alphanumeric string or integer
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_id', $acp_id, $acp_id_get_method, $product);
     }
 
@@ -2593,6 +2626,15 @@ final class ACP_Feed_Builder {
         else if($acp_gtin_get_method === 'meta')
             $acp_gtin = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_gtin', ''));
 
+        /**
+         * Filter to modify ACP: gtin value
+         *
+         * @param mixed $acp_gtin - Current gtin value
+         * @param string $acp_gtin_get_method - Method used to get the gtin
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - the filter has to return numeric string or integer
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_gtin', $acp_gtin, $acp_gtin_get_method, $product);
     }
 
@@ -2614,6 +2656,15 @@ final class ACP_Feed_Builder {
         else if($acp_mpn_get_method === 'meta')
             $acp_mpn = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_mpn', ''));
 
+        /**
+         * Filter to modify ACP: mpn value
+         * 
+         * @param mixed $acp_mpn - Current mpn value
+         * @param string $acp_mpn_get_method - Method used to get the mpn
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - the filter has to return alphanumeric string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_mpn', $acp_mpn, $acp_mpn_get_method, $product);
     }
 
@@ -2637,6 +2688,15 @@ final class ACP_Feed_Builder {
         else if($acp_title_get_method === 'meta')
             $acp_title = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_title', ''));
 
+        /**
+         * Filter to modify ACP: title value
+         *
+         * @param mixed $acp_title - Current title value
+         * @param string $acp_title_get_method - Method used to get the title value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the UTF-8 encoding
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_title', $acp_title, $acp_title_get_method, $product);
     }
 
@@ -2662,6 +2722,15 @@ final class ACP_Feed_Builder {
         else if($acp_desc_get_method === 'meta')
             $acp_desc = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_description', ''));
 
+        /**
+         * Filter to modify ACP: description value
+         *
+         * @param mixed $acp_desc - Current description value
+         * @param string $acp_desc_get_method - Method used to get the description value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the UTF-8 encoding, plain text only
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_description', $acp_desc, $acp_desc_get_method, $product);
     }
     
@@ -2691,6 +2760,14 @@ final class ACP_Feed_Builder {
         $acp_link = $acp_class_settings->acp_get_setting('product_link', '%product_link%');
         $acp_link = str_replace('%product_link%', $product_default_link, $acp_link);
 
+        /**
+         * Filter to modify ACP: link value
+         *
+         * @param mixed $acp_link - Current link value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_link', $acp_link, $product);
     }
 
@@ -2712,6 +2789,15 @@ final class ACP_Feed_Builder {
         else if($acp_condition_get_method === 'meta')
             $acp_condition = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_condition', ''));
 
+        /**
+         * Filter to modify ACP: condition value
+         *
+         * @param mixed $acp_condition - Current condition value
+         * @param string $acp_condition_get_method - Method used to get the condition value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return lowercase string, allowed: 'new', 'used' or 'refurbished'
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_condition', $acp_condition, $acp_condition_get_method, $product);
     }
 
@@ -2723,25 +2809,47 @@ final class ACP_Feed_Builder {
      * @since 1.0.0
      */
     public static function acp_get_category_path($product){
-        $product_id = $product->get_id();
-        $terms = get_the_terms($product_id, 'product_cat');
-        
-        if(empty($terms) || is_wp_error($terms))
-            return null;
+        global $acp_class_settings;
 
-        usort($terms, function($a, $b){
-            return self::acp_term_depth($a) <=> self::acp_term_depth($b);
-            });
+        $acp_category = null;
+        $acp_category_get_method = $acp_class_settings->acp_get_setting('product_category', 'woo');
 
-        $term = end($terms);
-        $chain = [];
-        
-        while($term && !is_wp_error($term)){
-            $chain[] = $term->name;
-            $term = $term->parent ? get_term($term->parent, 'product_cat') : null;
+        if($acp_category_get_method === 'woo'){
+            $product_id = $product->get_id();
+            $terms = get_the_terms($product_id, 'product_cat');
+            
+            if(empty($terms) || is_wp_error($terms))
+                return null;
+
+            usort($terms, function($a, $b){
+                return self::acp_term_depth($a) <=> self::acp_term_depth($b);
+                });
+
+            $term = end($terms);
+            $chain = [];
+            
+            while($term && !is_wp_error($term)){
+                $chain[] = $term->name;
+                $term = $term->parent ? get_term($term->parent, 'product_cat') : null;
+            }
+
+            $acp_category = implode(' > ', array_reverse($chain));
+        }else if($acp_category_get_method === 'attr'){
+            $acp_category = self::acp_get_attribute($product, $acp_class_settings->acp_get_setting('custom_key_product_category', ''));
+        }else if($acp_category_get_method === 'meta'){
+            $acp_category = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_category', ''));
         }
 
-        return implode(' > ', array_reverse($chain));
+        /**
+         * Filter to modify ACP: product_category value
+         *
+         * @param mixed $acp_category - Current category value
+         * @param string $acp_category_get_method - Method used to get the category value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
+        return apply_filters('acp_feed_attribute_category', $acp_category, $acp_category_get_method, $product);
     }
 
     /**
@@ -2790,6 +2898,15 @@ final class ACP_Feed_Builder {
             $acp_brand = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_brand', ''));
         }
 
+        /**
+         * Filter to modify ACP: brand value
+         *
+         * @param mixed $acp_brand - Current brand value
+         * @param string $acp_brand_get_method - Method used to get the brand value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_brand', $acp_brand, $acp_brand_get_method, $product);
     }
 
@@ -2811,6 +2928,15 @@ final class ACP_Feed_Builder {
         else if($acp_material_get_method === 'meta')
             $acp_material = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_material', ''));
 
+        /**
+         * Filter to modify ACP: material value
+         *
+         * @param mixed $acp_material - Current material value
+         * @param string $acp_material_get_method - Method used to get the material value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_material', $acp_material, $acp_material_get_method, $product);
     }
 
@@ -2842,6 +2968,15 @@ final class ACP_Feed_Builder {
             $acp_dimensions = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_dimensions', ''));
         }
 
+        /**
+         * Filter to modify ACP: dimensions value
+         *
+         * @param mixed $acp_dimensions - Current dimensions value
+         * @param string $acp_dimensions_get_method - Method used to get the dimensions value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "LxWxH unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_dimensions', $acp_dimensions, $acp_dimensions_get_method, $product);
     }
 
@@ -2923,6 +3058,15 @@ final class ACP_Feed_Builder {
             $acp_length = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_length', ''));
         }
 
+        /**
+         * Filter to modify ACP: length value
+         *
+         * @param mixed $acp_length - Current length value
+         * @param string $acp_length_get_method - Method used to get the length value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_length', $acp_length, $acp_length_get_method, $product);
     }
 
@@ -2952,6 +3096,15 @@ final class ACP_Feed_Builder {
             $acp_width = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_width', ''));
         }
 
+        /**
+         * Filter to modify ACP: width value
+         *
+         * @param mixed $acp_width - Current width value
+         * @param string $acp_width_get_method - Method used to get the width value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_width', $acp_width, $acp_width_get_method, $product);
     }
 
@@ -2981,6 +3134,15 @@ final class ACP_Feed_Builder {
             $acp_height = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_height', ''));
         }
 
+        /**
+         * Filter to modify ACP: height value
+         *
+         * @param mixed $acp_height - Current height value
+         * @param string $acp_height_get_method - Method used to get the height value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_height', $acp_height, $acp_height_get_method, $product);
     }
 
@@ -3010,6 +3172,15 @@ final class ACP_Feed_Builder {
             $acp_weight = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_weight', ''));
         }
 
+        /**
+         * Filter to modify ACP: weight value
+         *
+         * @param mixed $acp_weight - Current weight value
+         * @param string $acp_weight_get_method - Method used to get the weight value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_weight', $acp_weight, $acp_weight_get_method, $product);
     }
 
@@ -3031,6 +3202,15 @@ final class ACP_Feed_Builder {
         else if($acp_age_group_get_method === 'meta')
             $acp_age_group = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_age_group', ''));
 
+        /**
+         * Filter to modify ACP: age_group value
+         *
+         * @param mixed $acp_age_group - Current age_group value
+         * @param string $acp_age_group_get_method - Method used to get the age_group value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return lowercase string, allowed: 'newborn', 'infant', 'toddler', 'kids', 'adult'
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_age_group', $acp_age_group, $acp_age_group_get_method, $product);
     }
 
@@ -3062,6 +3242,15 @@ final class ACP_Feed_Builder {
             $image_link = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_image', ''));
         }
         
+        /**
+         * Filter to modify ACP: image_link value
+         *
+         * @param mixed $image_link - Current image_link value
+         * @param string $acp_image_get_method - Method used to get the image_link value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_image_link', $image_link, $acp_image_get_method, $product);
     }
 
@@ -3098,6 +3287,15 @@ final class ACP_Feed_Builder {
             $additional_images = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_additional_image_link', ''));
         }
 
+        /**
+         * Filter to modify ACP: additional_image_link value
+         *
+         * @param mixed $additional_images - Current additional_image_link value
+         * @param string $acp_additional_image_link_get_method - Method used to get the additional_image_link value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_additional_image_link', $additional_images, $acp_additional_image_link_get_method, $product);
     }
 
@@ -3119,6 +3317,15 @@ final class ACP_Feed_Builder {
         else if($acp_video_get_method === 'meta')
             $video_link = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_video_link', ''));
 
+        /**
+         * Filter to modify ACP: video_link value
+         *
+         * @param mixed $video_link - Current video_link value
+         * @param string $acp_video_get_method - Method used to get the video_link value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_video_link', $video_link, $acp_video_get_method, $product);
     }
 
@@ -3140,17 +3347,26 @@ final class ACP_Feed_Builder {
         else if($acp_model_3d_get_method === 'meta')
             $model_3d_link = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_model_3d_link', ''));
 
+        /**
+         * Filter to modify ACP: model_3d_link value
+         *
+         * @param mixed $model_3d_link - Current model_3d_link value
+         * @param string $acp_model_3d_get_method - Method used to get the model_3d_link value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_model_3d_link', $model_3d_link, $acp_model_3d_get_method, $product);
     }
 
     /**
-     * Get ACP: regular_price
+     * Get ACP: price
      *
      * @param WC_Product $product - WooCommerce product object to get it from
-     * @return mixed - regular_price for the product item or null if not found
+     * @return mixed - price for the product item or null if not found
      * @since 1.0.0
      */
-    public static function acp_get_regular_price($product){
+    public static function acp_get_price($product){
         global $acp_class_settings;
 
         $acp_price = null;
@@ -3167,7 +3383,16 @@ final class ACP_Feed_Builder {
             $acp_price = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_price', ''));
         }
 
-        return apply_filters('acp_feed_attribute_regular_price', $acp_price, $acp_price_get_method, $product);
+        /**
+         * Filter to modify ACP: price value
+         *
+         * @param mixed $acp_price - Current price value
+         * @param string $acp_price_get_method - Method used to get the price value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number currency"
+         * @since 1.0.0
+         */
+        return apply_filters('acp_feed_attribute_price', $acp_price, $acp_price_get_method, $product);
     }
 
     /**
@@ -3188,6 +3413,15 @@ final class ACP_Feed_Builder {
         else if($acp_taxes_fees_get_method === 'meta')
             $acp_taxes_fees = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_applicable_taxes_fees', ''));
 
+        /**
+         * Filter to modify ACP: applicable_taxes_fees value
+         *
+         * @param mixed $acp_taxes_fees - Current applicable_taxes_fees value
+         * @param string $acp_taxes_fees_get_method - Method used to get the applicable_taxes_fees value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number currency"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_applicable_taxes_fees', $acp_taxes_fees, $acp_taxes_fees_get_method, $product);
     }
 
@@ -3215,6 +3449,15 @@ final class ACP_Feed_Builder {
             $acp_sale_price = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_sale_price', ''));
         }
         
+        /**
+         * Filter to modify ACP: sale_price value
+         *
+         * @param mixed $acp_sale_price - Current sale_price value
+         * @param string $acp_sale_price_get_method - Method used to get the sale_price value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number currency"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_sale_price', $acp_sale_price, $acp_sale_price_get_method, $product);
     }
 
@@ -3254,6 +3497,15 @@ final class ACP_Feed_Builder {
             $acp_sale_price_effective_date = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_sale_price_effective_date', ''));
         }
 
+        /**
+         * Filter to modify ACP: sale_price_effective_date value
+         *
+         * @param mixed $acp_sale_price_effective_date - Current sale_price_effective_date value
+         * @param string $acp_sale_price_effective_date_get_method - Method used to get the sale_price_effective_date value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "YYYY-MM-DD / YYYY-MM-DD"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_sale_price_effective_date', $acp_sale_price_effective_date, $acp_sale_price_effective_date_get_method, $product);
     }
 
@@ -3275,6 +3527,15 @@ final class ACP_Feed_Builder {
         else if($acp_pricing_measure_get_method === 'meta')
             $acp_pricing_measure = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_unit_pricing_measure', ''));
 
+        /**
+         * Filter to modify ACP: unit_pricing_measure value
+         *
+         * @param mixed $acp_pricing_measure - Current unit_pricing_measure value
+         * @param string $acp_pricing_measure_get_method - Method used to get the unit_pricing_measure value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_unit_pricing_measure', $acp_pricing_measure, $acp_pricing_measure_get_method, $product);
     }
 
@@ -3296,6 +3557,15 @@ final class ACP_Feed_Builder {
         else if($acp_base_measure_get_method === 'meta')
             $acp_base_measure = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_base_measure', ''));
 
+        /**
+         * Filter to modify ACP: base_measure value
+         *
+         * @param mixed $acp_base_measure - Current base_measure value
+         * @param string $acp_base_measure_get_method - Method used to get the base_measure value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_base_measure', $acp_base_measure, $acp_base_measure_get_method, $product);
     }
 
@@ -3317,6 +3587,15 @@ final class ACP_Feed_Builder {
         else if($acp_pricing_trend_get_method === 'meta')
             $acp_pricing_trend = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_pricing_trend', ''));
 
+        /**
+         * Filter to modify ACP: pricing_trend value
+         *
+         * @param mixed $acp_pricing_trend - Current pricing_trend value
+         * @param string $acp_pricing_trend_get_method - Method used to get the pricing_trend value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_pricing_trend', $acp_pricing_trend, $acp_pricing_trend_get_method, $product);
     }
 
@@ -3356,6 +3635,15 @@ final class ACP_Feed_Builder {
             $acp_availability = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_availability', ''));
         }
 
+        /**
+         * Filter to modify ACP: availability value
+         *
+         * @param mixed $acp_availability - Current availability value
+         * @param string $acp_availability_get_method - Method used to get the availability value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return lowercase string, allowed: 'in_stock', 'out_of_stock', 'preorder'
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_availability', $acp_availability, $acp_availability_get_method, $product);
     }
 
@@ -3377,6 +3665,15 @@ final class ACP_Feed_Builder {
         else if($acp_availability_date_get_method === 'meta')
             $acp_availability_date = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_availability_date', ''));
 
+        /**
+         * Filter to modify ACP: availability_date value
+         *
+         * @param mixed $acp_availability_date - Current availability_date value
+         * @param string $acp_availability_date_get_method - Method used to get the availability_date value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "YYYY-MM-DD"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_availability_date', $acp_availability_date, $acp_availability_date_get_method, $product);
     }
 
@@ -3415,6 +3712,15 @@ final class ACP_Feed_Builder {
         else if($acp_inventory_quantity_get_method === 'meta')
             $acp_inventory_quantity = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_inventory_quantity', ''));
 
+        /**
+         * Filter to modify ACP: inventory_quantity value
+         *
+         * @param mixed $acp_inventory_quantity - Current inventory_quantity value
+         * @param string $acp_inventory_quantity_get_method - Method used to get the inventory_quantity value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return non-negative numeric string or integer
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_inventory_quantity', $acp_inventory_quantity, $acp_inventory_quantity_get_method, $product);
     }
 
@@ -3436,6 +3742,15 @@ final class ACP_Feed_Builder {
         else if($acp_expiration_date_get_method === 'meta')
             $acp_expiration_date = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_expiration_date', ''));
 
+        /**
+         * Filter to modify ACP: expiration_date value
+         *
+         * @param mixed $acp_expiration_date - Current expiration_date value
+         * @param string $acp_expiration_date_get_method - Method used to get the expiration_date value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "YYYY-MM-DD"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_expiration_date', $acp_expiration_date, $acp_expiration_date_get_method, $product);
     }
 
@@ -3457,6 +3772,15 @@ final class ACP_Feed_Builder {
         else if($acp_pickup_method_get_method === 'meta')
             $acp_pickup_method = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_pickup_method', ''));
 
+        /**
+         * Filter to modify ACP: pickup_method value
+         *
+         * @param mixed $acp_pickup_method - Current pickup_method value
+         * @param string $acp_pickup_method_get_method - Method used to get the pickup_method value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return lowercase string, allowed: 'in_stock', 'reserve', 'not_supported'
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_pickup_method', $acp_pickup_method, $acp_pickup_method_get_method, $product);
     }
 
@@ -3478,6 +3802,15 @@ final class ACP_Feed_Builder {
         else if($acp_pickup_sla_get_method === 'meta')
             $acp_pickup_sla = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_pickup_sla', ''));
 
+        /**
+         * Filter to modify ACP: pickup_sla value
+         *
+         * @param mixed $acp_pickup_sla - Current pickup_sla value
+         * @param string $acp_pickup_sla_get_method - Method used to get the pickup_sla value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number unit"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_pickup_sla', $acp_pickup_sla, $acp_pickup_sla_get_method, $product);
     }
 
@@ -3598,6 +3931,15 @@ final class ACP_Feed_Builder {
             $acp_shipping = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_shipping', ''));
         }
 
+        /**
+         * Filter to modify ACP: shipping value
+         *
+         * @param mixed $acp_shipping - Current shipping value
+         * @param string $acp_shipping_get_method - Method used to get the shipping value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "country:region:label:price;...", price in "number currency" format
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_shipping', $acp_shipping, $acp_shipping_get_method, $product);
     }
 
@@ -3619,6 +3961,15 @@ final class ACP_Feed_Builder {
         else if($acp_delivery_estimate_get_method === 'meta')
             $acp_delivery_estimate = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_delivery_estimate', ''));
 
+        /**
+         * Filter to modify ACP: delivery_estimate value
+         *
+         * @param mixed $acp_delivery_estimate - Current delivery_estimate value
+         * @param string $acp_delivery_estimate_get_method - Method used to get the delivery_estimate value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "YYYY-MM-DD"
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_delivery_estimate', $acp_delivery_estimate, $acp_delivery_estimate_get_method, $product);
     }
 
@@ -3642,6 +3993,15 @@ final class ACP_Feed_Builder {
         else if($acp_seller_name_get_method === 'meta')
             $acp_seller_name = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_seller_name', ''));
 
+        /**
+         * Filter to modify ACP: seller_name value
+         *
+         * @param mixed $acp_seller_name - Current seller_name value
+         * @param string $acp_seller_name_get_method - Method used to get the seller_name value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_seller_name', $acp_seller_name, $acp_seller_name_get_method, $product);
     }
 
@@ -3665,6 +4025,15 @@ final class ACP_Feed_Builder {
         else if($acp_seller_url_get_method === 'meta')
             $acp_seller_url = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_seller_url', ''));
 
+        /**
+         * Filter to modify ACP: seller_url value
+         *
+         * @param mixed $acp_seller_url - Current seller_url value
+         * @param string $acp_seller_url_get_method - Method used to get the seller_url value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_seller_url', $acp_seller_url, $acp_seller_url_get_method, $product);
     }
 
@@ -3688,6 +4057,15 @@ final class ACP_Feed_Builder {
         else if($acp_seller_privacy_policy_get_method === 'meta')
             $acp_seller_privacy_policy = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_seller_privacy_policy', ''));
 
+        /**
+         * Filter to modify ACP: seller_privacy_policy value
+         *
+         * @param mixed $acp_seller_privacy_policy - Current seller_privacy_policy value
+         * @param string $acp_seller_privacy_policy_get_method - Method used to get the seller_privacy_policy value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_seller_privacy_policy', $acp_seller_privacy_policy, $acp_seller_privacy_policy_get_method, $product);
     }
 
@@ -3711,6 +4089,15 @@ final class ACP_Feed_Builder {
         else if($acp_seller_tos_get_method === 'meta')
             $acp_seller_tos = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_seller_tos', ''));
 
+        /**
+         * Filter to modify ACP: seller_tos value
+         *
+         * @param mixed $acp_seller_tos - Current seller_tos value
+         * @param string $acp_seller_tos_get_method - Method used to get the seller_tos value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_seller_tos', $acp_seller_tos, $acp_seller_tos_get_method, $product);
     }
 
@@ -3734,6 +4121,15 @@ final class ACP_Feed_Builder {
         else if($acp_return_policy_get_method === 'meta')
             $acp_return_policy = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_return_policy', ''));
 
+        /**
+         * Filter to modify ACP: return_policy value
+         *
+         * @param mixed $acp_return_policy - Current return_policy value
+         * @param string $acp_return_policy_get_method - Method used to get the return_policy value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_return_policy', $acp_return_policy, $acp_return_policy_get_method, $product);
     }
 
@@ -3757,6 +4153,15 @@ final class ACP_Feed_Builder {
         else if($acp_return_window_get_method === 'meta')
             $acp_return_window = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_return_window', ''));
 
+        /**
+         * Filter to modify ACP: return_window value
+         *
+         * @param mixed $acp_return_window - Current return_window value
+         * @param string $acp_return_window_get_method - Method used to get the return_window value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return non-negative numeric string or integer
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_return_window', $acp_return_window, $acp_return_window_get_method, $product);
     }
 
@@ -3778,6 +4183,15 @@ final class ACP_Feed_Builder {
         else if($acp_popularity_score_get_method === 'meta')
             $acp_popularity_score = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_popularity_score', ''));
 
+        /**
+         * Filter to modify ACP: popularity_score value
+         *
+         * @param mixed $acp_popularity_score - Current popularity_score value
+         * @param string $acp_popularity_score_get_method - Method used to get the popularity_score value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return numeric string, integer or float in the range 0-5
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_popularity_score', $acp_popularity_score, $acp_popularity_score_get_method, $product);
     }
 
@@ -3799,6 +4213,15 @@ final class ACP_Feed_Builder {
         else if($acp_return_rate_get_method === 'meta')
             $acp_return_rate = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_return_rate', ''));
 
+        /**
+         * Filter to modify ACP: return_rate value
+         *
+         * @param mixed $acp_return_rate - Current return_rate value
+         * @param string $acp_return_rate_get_method - Method used to get the return_rate value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string in the format "number%" in the range 0%-100%
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_return_rate', $acp_return_rate, $acp_return_rate_get_method, $product);
     }
 
@@ -3820,6 +4243,15 @@ final class ACP_Feed_Builder {
         else if($acp_warning_get_method === 'meta')
             $acp_warning = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_warning', ''));
 
+        /**
+         * Filter to modify ACP: warning value
+         *
+         * @param mixed $acp_warning - Current warning value
+         * @param string $acp_warning_get_method - Method used to get the warning value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_warning', $acp_warning, $acp_warning_get_method, $product);
     }
 
@@ -3841,6 +4273,15 @@ final class ACP_Feed_Builder {
         else if($acp_warning_url_get_method === 'meta')
             $acp_warning_url = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_warning_url', ''));
 
+        /**
+         * Filter to modify ACP: warning_url value
+         *
+         * @param mixed $acp_warning_url - Current warning_url value
+         * @param string $acp_warning_url_get_method - Method used to get the warning_url value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_warning_url', $acp_warning_url, $acp_warning_url_get_method, $product);
     }
 
@@ -3864,6 +4305,15 @@ final class ACP_Feed_Builder {
         else if($acp_age_restriction_get_method === 'meta')
             $acp_age_restriction = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_age_restriction', ''));
 
+        /**
+         * Filter to modify ACP: age_restriction value
+         *
+         * @param mixed $acp_age_restriction - Current age_restriction value
+         * @param string $acp_age_restriction_get_method - Method used to get the age_restriction value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return non-negative numeric string or integer
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_age_restriction', $acp_age_restriction, $acp_age_restriction_get_method, $product);
     }
 
@@ -3891,6 +4341,15 @@ final class ACP_Feed_Builder {
             $acp_review_count = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_review_count', ''));
         }
 
+        /**
+         * Filter to modify ACP: product_review_count value
+         *
+         * @param mixed $acp_review_count - Current product_review_count value
+         * @param string $acp_review_count_get_method - Method used to get the product_review_count value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return non-negative numeric string or integer
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_product_review_count', $acp_review_count, $acp_review_count_get_method, $product);
     }
 
@@ -3918,6 +4377,15 @@ final class ACP_Feed_Builder {
             $acp_review_rating = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_review_rating', ''));
         }
 
+        /**
+         * Filter to modify ACP: product_review_rating value
+         *
+         * @param mixed $acp_review_rating - Current product_review_rating value
+         * @param string $acp_review_rating_get_method - Method used to get the product_review_rating value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return numeric string, integer or float in the range 0-5
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_product_review_rating', $acp_review_rating, $acp_review_rating_get_method, $product);
     }
 
@@ -3942,6 +4410,15 @@ final class ACP_Feed_Builder {
             $acp_store_review_count = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_store_review_count', ''));
         }
 
+        /**
+         * Filter to modify ACP: store_review_count value
+         *
+         * @param mixed $acp_store_review_count - Current store_review_count value
+         * @param string $acp_store_review_count_get_method - Method used to get the store_review_count value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return non-negative numeric string or integer
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_store_review_count', $acp_store_review_count, $acp_store_review_count_get_method, $product);
     }
 
@@ -3966,6 +4443,15 @@ final class ACP_Feed_Builder {
             $acp_store_review_rating = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_store_review_rating', ''));
         }
 
+        /**
+         * Filter to modify ACP: store_review_rating value
+         *
+         * @param mixed $acp_store_review_rating - Current store_review_rating value
+         * @param string $acp_store_review_rating_get_method - Method used to get the store_review_rating value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return numeric string, integer or float in the range 0-5
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_store_review_rating', $acp_store_review_rating, $acp_store_review_rating_get_method, $product);
     }
 
@@ -3987,6 +4473,15 @@ final class ACP_Feed_Builder {
         else if($acp_q_and_a_get_method === 'meta')
             $acp_q_and_a = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_q_and_a', ''));
 
+        /**
+         * Filter to modify ACP: q_and_a value
+         *
+         * @param mixed $acp_q_and_a - Current q_and_a value
+         * @param string $acp_q_and_a_get_method - Method used to get the q_and_a value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string, plain text in the format "Q: question? A: answer."
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_q_and_a', $acp_q_and_a, $acp_q_and_a_get_method, $product);
     }
 
@@ -4028,6 +4523,15 @@ final class ACP_Feed_Builder {
         else if($acp_raw_review_data_get_method === 'meta')
             $acp_raw_review_data = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_raw_review_data', ''));
 
+        /**
+         * Filter to modify ACP: raw_review_data value
+         *
+         * @param mixed $acp_raw_review_data - Current raw_review_data value
+         * @param string $acp_raw_review_data_get_method - Method used to get the raw_review_data value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string, may be JSON encoded
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_raw_review_data', $acp_raw_review_data, $acp_raw_review_data_get_method, $product);
     }
 
@@ -4073,6 +4577,15 @@ final class ACP_Feed_Builder {
             }
         }
 
+        /**
+         * Filter to modify ACP: related_ids value
+         *
+         * @param mixed $related_ids - Current related_ids value
+         * @param string $acp_related_ids_get_method - Method used to get the related_ids value
+         * @param mixed $related_ids - Additional context for the filter
+         * @return mixed - The filter has to return string of related IDs separated by comma
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_related_ids', $related_ids, $acp_related_ids_get_method, $related_ids);
     }
 
@@ -4094,6 +4607,15 @@ final class ACP_Feed_Builder {
         else if($acp_relationship_type_get_method === 'meta')
             $relationship_type = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_relationship_type', ''));
 
+        /**
+         * Filter to modify ACP: relationship_type value
+         *
+         * @param mixed $relationship_type - Current relationship_type value
+         * @param string $acp_relationship_type_get_method - Method used to get the relationship_type value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return lowercase string, allowed: 'part_of_set', 'required_part', 'ofter_bought_with', 'substitute', 'different_brand', 'accessory'
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_relationship_type', $relationship_type, $acp_relationship_type_get_method, $product);
     }
 
@@ -4115,6 +4637,15 @@ final class ACP_Feed_Builder {
         else if($acp_geo_price_get_method === 'meta')
             $geo_price = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_geo_price', ''));
 
+        /**
+         * Filter to modify ACP: geo_price value
+         *
+         * @param mixed $geo_price - Current geo_price value
+         * @param string $acp_geo_price_get_method - Method used to get the geo_price value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_geo_price', $geo_price, $acp_geo_price_get_method, $product);
     
     }
@@ -4137,6 +4668,15 @@ final class ACP_Feed_Builder {
         else if($acp_geo_availability_get_method === 'meta')
             $geo_availability = self::acp_get_meta($product, $acp_class_settings->acp_get_setting('custom_key_product_geo_availability', ''));
 
+        /**
+         * Filter to modify ACP: geo_availability value
+         *
+         * @param mixed $geo_availability - Current geo_availability value
+         * @param string $acp_geo_availability_get_method - Method used to get the geo_availability value
+         * @param WC_Product $product - WooCommerce product object being processed
+         * @return mixed - The filter has to return string
+         * @since 1.0.0
+         */
         return apply_filters('acp_feed_attribute_geo_availability', $geo_availability, $acp_geo_availability_get_method, $product);
     }
 

@@ -57,16 +57,37 @@ final class ACP_Feed{
 
 			fwrite($acp_feed_file_writer, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 
+            /**
+             * Action hook before starting products element in the feed
+             * Use case: add custom elements to the feed right after XML declaration
+             *
+             * @param resource $acp_feed_file_writer - File writer resource for the feed file
+             * @since 1.0.0
+             */
             do_action('acp_feed_before_products_start', $acp_feed_file_writer);
 
 			fwrite($acp_feed_file_writer, "<products>\n");
 
+            /**
+             * Action hook after starting products element in the feed
+             * Use case: add custom elements to the feed after opening products tag
+             *
+             * @param resource $acp_feed_file_writer - File writer resource for the feed file
+             * @since 1.0.0
+             */
             do_action('acp_feed_after_products_start', $acp_feed_file_writer);
 
 			fclose($acp_feed_file_writer);
 			
 			acp_log("initialize_build() -> Wrote XML header to {$acp_feed_tmp}");
 
+            /**
+             * Filter to modify the batch size for feed generation
+             * Use case: adjust the number of products processed per batch based on server capabilities
+             * 
+             * @param int $acp_batch_size - The number of products per batch (default is 300)
+             * @since 1.0.0
+             */
             $acp_batch_size = intval(apply_filters('acp_batch_size', 300));
 
             if($acp_batch_size <= 0){
@@ -174,6 +195,16 @@ final class ACP_Feed{
                 'type'    => ['simple'],
             ]);
 
+            /**
+             * Action hook allowing modification of fetched product IDs for the batch
+             * Use case: filter or modify the list of product IDs based on custom logic, e.g., exclude certain categories
+             * Important: Ensure that the returned value is an array of product IDs
+             * Important: If returning an empty array, the batch will be treated as finished
+             *
+             * @param array $ids - Array of product IDs fetched for the current batch
+             * @param int $page - The current page number being processed
+             * @since 1.0.0
+             */
             do_action('acp_fetch_products', $ids, $page);
             
             if(!is_array($ids)){
@@ -194,10 +225,24 @@ final class ACP_Feed{
                     return;
                 }
 
+                /**
+                 * Action hook before ending products element in the feed
+                 * Use case: add custom elements to the feed before closing products tag
+                 *
+                 * @param resource $acp_feed_file_writer - File writer resource for the feed file
+                 * @since 1.0.0
+                 */
                 do_action('acp_feed_before_products_end', $acp_feed_file_writer);
 
                 fwrite($acp_feed_file_writer, "</products>");
                 
+                /**
+                 * Action hook after ending products element in the feed
+                 * Use case: add custom elements to the feed right after closing products tag
+                 *
+                 * @param resource $acp_feed_file_writer - File writer resource for the feed file
+                 * @since 1.0.0
+                 */
                 do_action('acp_feed_after_products_end', $acp_feed_file_writer);
 
                 fclose($acp_feed_file_writer);
